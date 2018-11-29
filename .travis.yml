@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 10.13.0
+script:
+  - "npm run lint"
+  - "npm run test"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
+  app: sandbox-nestjs
+  on:
+    repo: enissay-git/sandbox-nestjs
